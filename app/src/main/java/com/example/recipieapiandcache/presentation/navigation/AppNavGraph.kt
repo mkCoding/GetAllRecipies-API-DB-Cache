@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavArgs
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -13,7 +12,6 @@ import androidx.navigation.navArgument
 import com.example.recipieapiandcache.presentation.screens.RecipeDetailsScreen
 import com.example.recipieapiandcache.presentation.screens.RecipieScreen
 import com.example.recipieapiandcache.presentation.screens.RecipieViewModel
-import java.nio.charset.StandardCharsets
 
 @Composable
 fun AppNavGraph(
