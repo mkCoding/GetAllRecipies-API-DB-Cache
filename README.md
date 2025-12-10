@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/3a5c9dc4-607a-4395-ba98-7282b1e1773d
 > java.lang.IllegalArgumentException: Cannot navigate to **NavDeepLinkRequest**{ uri=android-app://androidx.navigation/ **recipeDetailsScreen?nameOfDish=Classic Margherita Pizza&ingredients=Pizza dough,Tomato sauce,Fresh mozzarella cheese,Fresh basil leaves,Olive oil,Salt and pepper to taste&imageURL=https://cdn.dummyjson.com/recipe-images/1.webp** } 
 
 > When passing arguments to another screen like this(below) make sure passing valid param structure to the Screen you're navigating to.
-> Ultimately
+> - Ultimately these are **equivalent**:
 > - **nameOfDish={nameOfDish}** - AppNavGraph
 > - **nameOfDish=$nameOfDish** - UI Screen
 ```
