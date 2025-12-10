@@ -29,9 +29,12 @@ https://github.com/user-attachments/assets/3a5c9dc4-607a-4395-ba98-7282b1e1773d
 ## Notes to Self:
 - When working with navigation ensure that **AppNavHost** is in **MainActivity** and you pass navController to it
 - When you get error like this(below) the first thing to check is your **navController.navigate** method and params that you pass to it to ensure names are proper and no mistakes in param values
-> java.lang.IllegalArgumentException: Cannot navigate to **NavDeepLinkRequest**{ uri=android-app://androidx.navigation/**recipeDetailsScreen?nameOfDish=Classic Margherita Pizza&ingredients=Pizza dough,Tomato sauce,Fresh mozzarella cheese,Fresh basil leaves,Olive oil,Salt and pepper to taste&imageURL=https://cdn.dummyjson.com/recipe-images/1.webp**} 
+> java.lang.IllegalArgumentException: Cannot navigate to **NavDeepLinkRequest**{ uri=android-app://androidx.navigation/ **recipeDetailsScreen?nameOfDish=Classic Margherita Pizza&ingredients=Pizza dough,Tomato sauce,Fresh mozzarella cheese,Fresh basil leaves,Olive oil,Salt and pepper to taste&imageURL=https://cdn.dummyjson.com/recipe-images/1.webp** } 
 
-- When passing arguments to another screen like this(below) make sure the Screen you're navigating from has exact same name:
+> When passing arguments to another screen like this(below) make sure passing valid param structure to the Screen you're navigating to.
+> Ultimately
+> - **nameOfDish={nameOfDish}** - AppNavGraph
+> - **nameOfDish=$nameOfDish** - UI Screen
 ```
           composable(
             route = Route.RECIPE_DETAILS_SCREEN + "?nameOfDish={nameOfDish}&ingredients={ingredients}&imageURL={imageURL}",   
@@ -45,16 +48,15 @@ https://github.com/user-attachments/assets/3a5c9dc4-607a-4395-ba98-7282b1e1773d
 
       //Screen containing the navigate method will only contain the values them selves not the curly braces("{}")
                 navController.navigate(
-                                            Route.RECIPE_DETAILS_SCREEN +
-                                            //nameOfDish, ingredients, imageURL
-                                            "?nameOfDish=$nameOfDish" // the value only
-                                            +"&ingredients=$ingredientsListAsString" // the value only
-                                            +"&imageURL=$imageURL" // the value only
-                                        )
+                    Route.RECIPE_DETAILS_SCREEN +
+                   //nameOfDish, ingredients, imageURL
+                   "?nameOfDish=$nameOfDish" // the value only
+                   +"&ingredients=$ingredientsListAsString" // the value only
+                   +"&imageURL=$imageURL" // the value only
+                )
 ...
 
  ```
-
 
 
 
