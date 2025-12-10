@@ -6,7 +6,7 @@ Combine cached + network data
 
 # Users should be able to:
 - Open the app click on a dish
-- Details screen should display dish ingredients an dimage
+- Details screen should display dish ingredients and image
 - Data should be able to view the data offline
 
 ### Additional Notes:
