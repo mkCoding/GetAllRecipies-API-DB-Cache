@@ -28,8 +28,10 @@ fun AppNavGraph(
                 )
         }
 
-        composable(Route.RECIPE_DETAILS_SCREEN +
-            "?nameOfDish={nameOfDish}&ingredients={ingredients}&imageURL={imageURL}",            arguments = listOf(
+        composable(
+            route = Route.RECIPE_DETAILS_SCREEN +
+            "?nameOfDish={nameOfDish}&ingredients={ingredients}&imageURL={imageURL}",
+            arguments = listOf(
                 navArgument("nameOfDish") { type = NavType.StringType },
                 navArgument("ingredients") { type = NavType.StringType },
                 navArgument("imageURL") { type = NavType.StringType }

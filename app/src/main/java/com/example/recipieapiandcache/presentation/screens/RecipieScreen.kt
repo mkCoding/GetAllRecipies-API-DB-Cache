@@ -20,9 +20,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.recipieapiandcache.presentation.navigation.Route
@@ -52,8 +54,6 @@ fun RecipieScreen(
                 }else{
                     LazyColumn(
                         modifier = Modifier,
-                            //.fillMaxSize()
-                            //.padding(16.dp),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         items(recipeList){item ->
@@ -71,10 +71,6 @@ fun RecipieScreen(
                             val ingredientsListAsString = ingredientsRawList.joinToString(",")
                             val nameOfDish = item.name
                             val imageURL = item.image
-
-//                            val encodedName = URLEncoder.encode(nameOfDish, StandardCharsets.UTF_8.toString())
-//                            val encodedIngredients = URLEncoder.encode(ingredientsListAsString, StandardCharsets.UTF_8.toString())
-//                            val encodedImage = URLEncoder.encode(imageURL, StandardCharsets.UTF_8.toString())
 
                             AsyncImage(
                                 model = ImageRequest.Builder(LocalContext.current)
@@ -121,11 +117,11 @@ fun RecipieScreen(
 }
 
 
-//@Preview(showBackground = true)
-//@Composable
-//fun RecipieScreenPreview() {
-//    RecipieScreen(
-//        recipeState = RecipeState.Success(recipieData = SampleRecipes.recipeList),
-//        navController = rememberNavController()
-//    )
-//}
+@Preview(showBackground = true)
+@Composable
+fun RecipieScreenPreview() {
+    RecipieScreen(
+        recipeState = RecipeState.Success(recipieData = SampleRecipes.recipeList),
+        navController = rememberNavController()
+    )
+}
